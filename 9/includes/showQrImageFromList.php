@@ -12,11 +12,12 @@
         echo "<br>";
         echo "Appel: " . $folderBaseUrl;
         echo "<br>";
-
+        echo $urlData = "http://dagutv.daggelito.se/9/imageView.php?image_id=123";
+        echo "<br>";
         include "functions/generateQrData.php";
         echo "test1: " . $ImageLocation = $_SESSION["ImageLocation"] = create_randomImg_putInFolder($qr_folder);
         echo "<br>";
-        echo "test2: " .  $data = file_get_contents_curl("$urlData");
+        echo "test2: " .  $data = file_get_contents_curl($urlData);
         file_put_contents($ImageLocation, $data);
         $_SESSION["QRData"] = $data;
 

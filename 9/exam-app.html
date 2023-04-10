@@ -1,0 +1,156 @@
+<!doctype html>
+<html lang="se">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+        <title>QR da-Code</title>
+        <meta name="viewport" content="width=device-width,initial-scale=1">
+        <link rel=“icon” href=”/Webbutv-II/9/favicon.ico” type=“image/x-icon”>
+        <script type="text/javascript" src="js/exam-app.js"></script>
+        <link href="css/style.css" rel="stylesheet" type="text/css" media="all">
+        <link href="css/media.css" rel="stylesheet" type="text/css" media="all">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+        <link href="css/print.css" rel="stylesheet" type="text/css" media="print">
+    </head>
+    <body>
+        <div id="grid-container">
+            <input id="show-email" type="checkbox" name="show-email">
+            <header>
+                <div id="error" ---error_show--- >
+                    <p>COULD NOT EXECUTE STATEMENT: ---error_msg---</p>
+                    <div class="heading">Software error:</div>
+                    Line: ---error_line--- in ---error_file---
+                    <p>For help, please send mail to the webmaster (Dag Fredriksson) --mail_address--, 
+                    giving this error message and the time and date of the error.</p>
+                    <a href="---start_page_url---">Back to start page</a>
+                </div>
+                <div id="generate-QR" class="content header-content" ---hide_content--->
+                    <h1 class="app-header">QR da-Code</h1>
+                    <div class="header-forms-container">
+                        <div id="qrimage-list-message" ---show_added-text--->
+                            <p id="success-text">
+                                The QR image with message "---QR_txt_message---" was successfully saved to the list!
+                            </p>
+                        </div>
+                        <div id="qrimage-list-message" ---show_deleted-text--->
+                            <p id="success-text">
+                               ---QR_txt_message---
+                            </p>
+                        </div>
+                        <div id="email-success-message" ---show_email_msg--->
+                            <p id="success-text">
+                                Your email has been successfully sent to: --Recipient--
+                            </p>
+                        </div>
+                        <div id="email-fail-message" ---show_email_fail_msg--->
+                            <p id="fail-text">
+                                ---show_error_mail_msg---
+                            </p>
+                        </div>
+                        <div class="header-forms">
+                            <form method="post" enctype="multipart/form-data" action="exam-app.php">
+                                <label for="qrcode">Generate your own QR-image:</label>
+                                <div class="generate-qr-inputs">
+                                    <input autocomplete="off" type="text" id="qrcode" name="qrcode" placeholder="Type your QR text here"/>
+                                </div>
+                                <div class="generate-qr-inputs">
+                                    <input class="button" type="submit" name="generate_QR_button" value="Generate"/>
+                                    <span id="add-to-DB" class="DB-link ---enable_DB-link---">
+                                        <span class="material-symbols-outlined">library_add</span>
+                                        <a id="tabindex-no" tabindex="-1" href="exam-app.php?addToDB=true">Save to list</a>
+                                        <a id="tabindex" tabindex="0" href="exam-app.php?addToDB=true">Save to list</a>
+                                    </span>
+                                </div>
+                            </form>
+                        </div>
+                        <div class="header-forms border-top-compact-view show-hide-row">
+                            <form name="ListForm" method="post" enctype="multipart/form-data" action="exam-app.php">
+                                <input id="show-qr-list" type="checkbox" name="show-qr-list">
+                                <label class="show-qr-list" for="show-qr-list">
+                                    <span class="material-symbols-outlined show-qr-list-arrow down">expand_more</span>
+                                    <span class="material-symbols-outlined show-qr-list-arrow up">expand_less</span>
+                                    <span class="show-qr-list-text down">Open QR list</span>
+                                    <span class="show-qr-list-text up">Close QR list</span>
+                                </label>
+                                <div class="header-form-add-to-DB border-top-compact-view">
+                                    <label for="qr-image">Select a QR-image from list:</label>
+                                    <div class="dropdown">
+                                        <select name="qr-image" id="qr-image">
+                                            <option value="select">Select a QR image</option>
+                                            <!--===entries===-->
+                                            <option ---selected--- value="---image_id---!!!---QR_txt_list---">---QR_txt_list_truncated---</option>
+                                            <!--===entries===-->
+                                        </select>
+                                    </div>
+                                    <div class="list-buttons">
+                                        <button class="changeSelected button" type="submit" name="requestDB_button" value="show_qr_image">Show qr-image</button>
+                                        <button class="deleteSelected button" type="submit" name="requestDB_button" value="delete_qr_image">Delete qr-image</button>
+                                    </div>
+                                </div>
+                                <label class="show-email" for="show-email">
+                                    <span class="material-symbols-outlined show-email-arrow down">expand_more</span>
+                                    <span class="material-symbols-outlined show-email-arrow up">expand_less</span>
+                                    Email QR-image
+                                </label>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </header>
+            <main class="content" ---hide_content--->
+                <div id="image-content">
+                    <p class="qr-code-text">QR text: ---QR_txt---</p>
+                    <img class="qr-image" src="---image_src---" alt="QR bild!"/>
+                    <p id="print-QR">
+                        <span class="material-symbols-outlined">print</span>
+                        <a href="#">Print your QR-image</a>
+                    </p>
+                </div>
+            </main>
+            <aside class="content" ---hide_content--->              
+                <div id="email-qrimage">
+                    <input id="emailForm-options" type="checkbox" name="emailForm-options">
+                    <p class="emailForm__heading">
+                        <span>Mail QR image:</span>
+                        <label class="emailForm-options" for="emailForm-options" role="button">
+                            <span class="material-symbols-outlined more-down">more_down</span>
+                            <span class="material-symbols-outlined more-up">more_up</span>
+                        </label>
+                    </p>
+                    <form name="emailForm" method="post" enctype="multipart/form-data" action="exam-app.php">
+                        <div class="emailForm__mandatory">
+                            <p >
+                                <input type="text" name="from" placeholder="From" value="daggelito02@gmail.com">
+                            </p>
+                            <p>
+                                <input type="text" name="to" placeholder="To">
+                            </p>
+                        </div>
+                        <div class="emailForm__extra">
+                            <p>
+                                <input type="text" name="cc" placeholder="Cc">
+                            </p>
+                            <p>
+                                <input type="text" name="bcc" placeholder="Bcc">
+                            </p>
+                        </div>
+                        <p>
+                            <input type="hidden" name="subject" value="QR image with message ---QR_txt---">
+                            <p>
+                                Subject: QR image with message:<br>
+                                <span class="qr-code-text">"---QR_txt---"</span>
+                            </p>
+                        </p>
+                        <p>
+                            <textarea name="message" rows="6" cols="25" placeholder="Message"></textarea>
+                        </p>
+                        <p>
+                            <input class="button" type="submit" name="send_email_button" value="Send email">
+                            <input type="hidden" name="send_email" value="true">
+                        </p>
+                    </form>
+                </div>
+            </aside>
+        </div>
+    </body>
+</html>

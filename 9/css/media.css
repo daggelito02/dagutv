@@ -1,0 +1,122 @@
+@media screen and (max-width: 767px) {
+
+    body {
+        display: block;
+        background-color: #fff;
+    }
+    #grid-container {
+        display: flex;
+        flex-wrap: wrap;
+        width: 100%;
+    }
+    header, .content {
+        flex: 1 1 100%;
+    }
+    .header-forms {
+        flex: 0 1 100%;
+    }
+    .border-top-compact-view {
+        border-top: solid 1px #ababab;
+      }
+    .header-forms input[type="text"], .header-forms .dropdown {
+        width: 100%;
+        min-width: unset;
+        max-width: unset;
+    }
+    .header-form-add-to-DB {
+        display: none;
+        padding-top: 0.5rem;
+    }
+    .show-qr-list, .show-email {
+        display: inline-block;
+        margin-top: 0;
+        padding: 0.625rem 0 0.625rem 1.5rem;
+        text-align: left;
+        position: relative;
+    }
+    .show-qr-list:hover,
+    .show-email:hover {
+        cursor: pointer;
+    }
+    .show-qr-list-arrow, .show-email-arrow {
+        position: absolute;
+        top: 4px;
+        left: -6px;
+        font-size: 2rem!important;
+    }
+    .show-qr-list-arrow.up {
+        top: 2px;
+    }
+    .show-qr-list-arrow.up, .show-qr-list-text.up, .show-email-arrow.up {
+        display: none;
+    }
+    #show-qr-list:checked +
+    .show-qr-list
+    .show-qr-list-arrow.down,
+    #show-qr-list:checked +
+    .show-qr-list
+    .show-qr-list-text.down {
+        display: none;
+    }
+    #show-qr-list:checked +
+    .show-qr-list
+    .show-qr-list-arrow,
+    #show-qr-list:checked +
+    .show-qr-list
+    .show-qr-list-text {
+        display: block; 
+
+    }
+    #show-qr-list:checked +
+    .show-qr-list +
+    .header-form-add-to-DB {
+        display: block;
+    }
+    main {
+        order: 3;
+    }
+    #image-content {
+        text-align: center;
+    }
+    #email-qrimage input[type="text"], #email-qrimage textarea {
+        width: 100%;
+    }
+    #email-qrimage {
+        display: none;
+    }
+    .show-email {
+        position: absolute;
+        top: 0;
+        right: 0.2rem;
+    }
+    #show-email:checked +
+    header
+    .show-email
+    .show-email-arrow.down {
+        display: none;
+    }
+    #show-email:checked +
+    header
+    .show-email
+    .show-email-arrow {
+        display: block;
+        top: 2px;
+    }
+    #show-email:checked +
+    header +
+    main +
+    aside
+    #email-qrimage {
+        display: block;
+    }
+}
+@media screen and (max-width: 667px) {
+    header, main, aside {
+        padding: 0px 1.625rem;
+      }
+}
+@media screen and (max-width: 414px) {
+    header, main, aside {
+        padding: 0px 1.2rem;
+      }
+}

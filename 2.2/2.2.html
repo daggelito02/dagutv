@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="application/xhtml+xml; charset=utf-8"/>
+    <title>
+      GET och POST
+    </title>
+  </head>
+  <body>
+    <h3>Posta med GET eller POST</h3>
+    <form method="get" action="2.2.php">
+      <div>
+        <input type="hidden" name="hidden" value="Skickat med GET!"/> 
+      </div>
+      <h4>Skicka en önskelista till tomten via GET-metoden</h4>
+      <div>
+        <label for="first-name">Förnamn:</label>
+        <input id="first-name" type="text" name="first_name" value=""/>
+        <label for="last-name">Efternamn:</label>
+        <input id="last-name" type="text" name="last_name" value=""/>
+      </div>
+      <div>
+        <label for="one-gift">En julklap:</label>
+        <input id="one-gift" type="radio" value="En julklap" name="number_of_gifts" checked="checked"/>
+        <label for="two-gifts">Två julklappar:</label>
+        <input id="two-gifts" type="radio" value="Två julklappar" name="number_of_gifts"/>
+      </div>
+      <div>
+        <label for="home-delivery">Hemleverans:</label>
+        <input id="home-delivery" type="checkbox" name="home_delivery" value="Hemleverans" checked="checked"/>
+      </div>
+      <div>
+        <label for="the-gift">Välj Julklapp:</label>
+        <select id="the-gift" name="the_gift"> 
+          <option value="Iphone">
+            Iphone
+          </option>
+          <option value="Ipad">
+            Ipad
+          </option>
+        </select>
+      </div>  
+      <div>
+        <label for="other-wishes">Övrigt:</label><br/>
+        <textarea id="other-wishes" name="other_wishes" rows="10" cols="10"> </textarea>
+      </div>
+      <div>
+        <input type="submit" value="Skicka önskan" name="submit"/>
+      </div>
+    </form>
+    <form method="post" action="2.2.php">
+      <div>
+        <input type="hidden" name="hidden" value="Skickat med POST!"/> 
+      </div>
+      <h4>Skicka en önskelista till tomten via POST-metoden</h4>
+      <div>
+        <label for="first-name">Förnamn:</label>
+        <input id="first-name" type="text" name="first_name" value=""/>
+        <label for="last-name">Efternamn:</label>
+        <input id="last-name" type="text" name="last_name" value=""/>
+      </div>
+      <div>
+        <label for="one-gift">En julklap:</label>
+        <input id="one-gift" type="radio" value="En julklap" name="number_of_gifts" checked="checked"/>
+        <label for="two-gifts">Två julklappar:</label>
+        <input id="two-gifts" type="radio" value="Två julklappar" name="number_of_gifts"/>
+      </div>
+      <div>
+        <label for="home-delivery">Hemleverans:</label>
+        <input id="home-delivery" type="checkbox" name="home_delivery" value="Hemleverans" checked="checked"/>
+      </div>
+      <div>
+        <label for="the-gift">Välj Julklapp:</label>
+        <select id="the-gift" name="the_gift"> 
+          <option value="Iphone">
+            Iphone
+          </option>
+          <option value="Ipad">
+            Ipad
+          </option>
+        </select>
+      </div>  
+      <div>
+        <label for="other-wishes">Övrigt:</label><br/>
+        <textarea id="other-wishes" name="other_wishes" rows="10" cols="10"> </textarea>
+      </div>
+      <div>
+        <input type="submit" value="Skicka önskan" name="submit"/>
+      </div>
+    </form>
+  </body>
+</html>

@@ -1,0 +1,322 @@
+@charset "UTF-8";
+*, *:before, *:after {
+  box-sizing: border-box; 
+}
+html, body{
+  height: 100%;
+  font-size: 16px;
+  color: #222;
+}
+body {
+  display: grid;
+  justify-content: center;
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: #efefef;
+  line-height: 1.4;
+}
+input, textarea, select {
+  font-size: 1rem;
+  color: #222;
+}
+#grid-container {
+  justify-content: center;
+  width: 768px;
+  max-width: 768px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-areas: "header header"
+                        "main aside";   
+  grid-template-rows: min-content auto;
+  background-color: #fff;
+}
+header, main, aside {
+  padding: 0px 2.625rem;
+}
+header {
+  grid-area: header;
+}
+main {
+  grid-area: main;
+}
+aside {
+  grid-area: aside;
+}
+.app-header {
+  color: #fefefe;
+  background-color: #222;
+  padding: 1rem;
+  margin: 1rem 0;
+  font-size: 40px;
+  border-radius: 3px;
+}
+.material-symbols-outlined {
+  cursor: pointer;
+}
+input[type="text"] {
+  width: 300px;
+  border: 1px solid #e0e0e0;
+  border-radius: 5px;
+  height: 36px;
+  padding: 16px;
+}
+#show-qr-list, .show-qr-list {
+  display: none;
+}
+.qr-code-text {
+  word-break: break-all;
+  text-align: left;
+}
+textarea {
+  width: 300px;
+  height: 137px;
+  border: 1px solid #e0e0e0;
+  border-radius: 5px;
+  padding: 1rem;
+  font-family: Arial, Helvetica, sans-serif;
+}
+#error,
+#qrimage-list-message,
+#email-success-message,
+#email-fail-message {
+    display: none;
+}
+.heading {
+    font-size: 30px;
+    font-weight: 600;
+}
+.header-forms-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+.header-forms {
+  flex: 0 1 auto;
+}
+.header-content {
+  border-bottom: solid 1px #ababab;
+}
+.show-mail {
+  display: none;
+}
+label {
+  margin: .5rem 0 0;
+  display: inline-block;
+}
+.generate-qr-inputs, .list-buttons{
+  margin: .5rem 0 1rem;
+  display: flex;
+  justify-content: space-between;
+}
+#qrimage-list-message,
+#email-success-message,
+#email-fail-message {
+  flex: 1;
+  min-width: 100%;
+  margin-top: -0.5rem;
+}
+#success-text, #fail-text {
+  margin: 0 0 0.5rem;
+  background: #efefef;
+  padding: 0.5rem;
+  color: #444;
+  width: 100%;
+}
+.show-hide-row {
+  position: relative;
+}
+.button {
+    appearance: none;
+    background-color: #FAFBFC;
+    border: 1px solid rgba(27, 31, 35, 0.15);
+    border-radius: 5px;
+    box-shadow: rgba(27, 31, 35, 0.04) 0 1px 0, rgba(255, 255, 255, 0.25) 0 1px 0 inset;
+    box-sizing: border-box;
+    color: #24292E;
+    cursor: pointer;
+    display: inline-block;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 20px;
+    list-style: none;
+    height: 36px;
+    padding: 6px 16px;
+    position: relative;
+    transition: background-color 0.2s cubic-bezier(0.3, 0, 0.5, 1);
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    vertical-align: middle;
+    white-space: nowrap;
+    word-wrap: break-word;
+}
+.button:hover {
+  background-color: #EFF0F2;
+  text-decoration: none;
+  transition-duration: 0.1s;
+}
+.button:disabled {
+  background-color: #FAFBFC;
+  border-color: rgba(27, 31, 35, 0.15);
+  color: #959DA5;
+  cursor: default;
+}
+.button:active {
+  background-color: #EDEFF2;
+  box-shadow: rgba(225, 228, 232, 0.2) 0 1px 0 inset;
+  transition: none 0s;
+}
+.button:before {
+  display: none;
+}
+input.button:focus-within {
+  border: solid 1px #222;
+}
+.button:-webkit-details-marker {
+  display: none;
+}
+.dropdown {
+  position: relative;
+  display: block;
+  min-width: 300px;
+  max-width: 300px;
+  margin: 8px 0;
+}
+.dropdown:before {
+    content: '';
+    height: 31px;
+    position: absolute;
+    right: 7px;
+    top: 3px;
+    width: 22px;
+    background: #fff;
+    border-top-right-radius: 3px;
+    border-bottom-right-radius: 3px;
+    pointer-events: none;
+    display: block;
+  }
+.dropdown:after {
+  content: " ";
+  position: absolute;
+  right: 15px;
+  top: 46%;
+  margin-top: -3px;
+  z-index: 2;
+  pointer-events: none;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 6.9px 4px 0 4px;
+  border-color: #aaa transparent transparent transparent;
+  pointer-events: none;
+}
+.dropdown select {
+  overflow: hidden;
+  overflow: -moz-hidden-unscrollable;
+  background: url(/img/selectBG.png) no-repeat right white;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  padding: 0 30px 0 16px;
+  border: 1px solid #e0e0e0;
+  border-radius: 5px;
+  font-size: 1rem;
+  line-height: 36px;
+  height: 36px;
+  background: #fff;
+  margin: 0 5px 5px 0;
+  width: 100%;
+}
+.qr-image {
+  border: 1px solid #e0e0e0;;
+  border-radius: 3px;
+}
+#print-QR {
+  position: relative;
+}
+#print-QR span {
+  position: absolute;
+  bottom: -2px;
+}
+.DB-link span {
+  position: absolute;
+  top: -2px;
+  color: #ccc;
+  cursor: default;
+}
+#print-QR a {
+  padding-left: 1.8rem;
+  color: #222;
+}
+.DB-link {
+  position: relative;
+  align-self: center;
+  padding-right: 0.5rem;
+}
+.DB-link a {
+  pointer-events: none;
+  font-style: italic;
+  color: #ccc;
+  padding-left: 1.8rem;
+}
+.DB-link.enable_db_link a {
+  pointer-events: unset;
+  font-style: unset;
+  color: unset;
+}
+.DB-link.enable_db_link #tabindex {
+  display: block;
+}
+.DB-link.enable_db_link #tabindex-no, .DB-link #tabindex {
+  display: none;
+}
+
+.DB-link.enable_db_link span {
+  color: unset;
+  cursor: pointer;
+}
+#show-email, .show-email {
+  display: none;
+}
+.emailForm__heading {
+  position: relative;
+}
+.emailForm__extra p {
+  margin-top: 0;
+}
+.emailForm__heading span, 
+.emailForm__heading label {
+  display: inline-block;
+}
+.more-up, .more-down {
+  background-color: #fff;
+  top: -4px;
+  right: 0;
+  position: absolute;
+}
+#email-qrimage {
+  position: relative;
+}
+#emailForm-options {
+  position: absolute;
+  top: -3px;
+  right: 3px;
+}
+#emailForm-options:focus-visible 
++ p .emailForm-options span {
+  outline: -webkit-focus-ring-color auto 1px;
+}
+.emailForm__extra, 
+.emailForm__heading span.more-up {
+  display: none;
+}
+#emailForm-options:checked +
+.emailForm__heading span.more-up,
+#emailForm-options:checked + 
+p + form .emailForm__extra {
+  display: inline-block;
+}
+#emailForm-options:checked +
+.emailForm__heading span.more-down {
+  display: none;
+}

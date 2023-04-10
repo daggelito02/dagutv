@@ -1,0 +1,32 @@
+@charset "UTF-8";
+body { 
+    font-family: Georgia, Times, serif; font-size: 14pt;
+    color: #000000; 
+    background-color: #ffffff;
+    width: 100%;
+    height: auto;
+    display: block;
+}
+header,
+aside,
+#generate-QR, 
+#email-qrimage, 
+#add-to-DB, 
+#print-QR ,
+#qrimage-list-message {
+    display: none!important;
+}
+#grid-container {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+}
+main {
+    padding: 0;
+}
+div#image-content {
+    margin: 0 auto;
+    width: fit-content;
+    max-width: 300px;
+    padding-top: 20%;
+}

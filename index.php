@@ -42,25 +42,25 @@
     </a>
   </li>
   <li>
-    <span class="material-symbols-outlined">check_box</span>
+    <span class="material-symbols-outlined green">check_box</span>
     <a href="tasks2.html">
       Uppgift 2: Information från användaren
     </a>
   </li>
   <li>
-    <span class="material-symbols-outlined">check_box</span>
+    <span class="material-symbols-outlined green">check_box</span>
     <a href="tasks3.html">
       Uppgift 3: Kodseparation
     </a>
   </li>
   <li>
-    <span class="material-symbols-outlined">check_box</span>
+    <span class="material-symbols-outlined green">check_box</span>
     <a href="tasks4.html">
       Uppgift 4: Sessionshantering
     </a>
   </li>
   <li>
-    <span class="material-symbols-outlined">check_box</span>
+    <span class="material-symbols-outlined green">check_box</span>
     <a href="tasks5.html">
       Uppgift 5: Meddelandehantering
     </a>
@@ -78,7 +78,7 @@
     </a>
   </li>
   <li>
-    <span class="material-symbols-outlined">check_box</span>
+    <span class="material-symbols-outlined green">check_box</span>
     <a href="tasks8.html">
       Uppgift 8: Säkerhet
     </a>

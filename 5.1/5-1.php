@@ -7,7 +7,7 @@ use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\SMTP;
 use PHPMailer\PHPMailer\Exception;
 
-include '../../settings/setting.php'; //to hide username and temp gmail generated password
+include '../settings/setting.php'; //to hide username and temp gmail generated password
 require 'Exception.php';
 require 'PHPMailer.php';
 require 'SMTP.php';

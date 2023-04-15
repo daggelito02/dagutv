@@ -1,5 +1,5 @@
 <?php
-    // Skriv något vettigt här
+    // Skapar ett slumpmässigt sessions-id med inbyggda stödet php språket
     header('Content-type: text/html');
     session_start();
     $sessions_id = session_create_id();

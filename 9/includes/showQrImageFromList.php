@@ -7,17 +7,16 @@
         echo $ImageLocation = $_SESSION["ImageLocation"] = $image_view . $option_values[0];
         echo "<br>";
         echo $urlData = $folderBaseUrl . $ImageLocation;
+        // echo "<br>";
+        // echo $urlData = "9/" . $ImageLocation;
+        // echo "<br>";
+        // echo "Appel: " . $folderBaseUrl;
         echo "<br>";
-        echo $urlData = "9/" . $ImageLocation;
-        echo "<br>";
-        echo "Appel: " . $folderBaseUrl;
-        echo "<br>";
-        echo $urlData = "http://dagutv.daggelito.se/9/imageView.php?image_id=123";
-        echo "<br>";
+        //$urlData = "http://192.168.1.2/dagtest/south-mini.png";
+        //echo "<br>";
         include "functions/generateQrData.php";
-        echo "test1: " . $ImageLocation = $_SESSION["ImageLocation"] = create_randomImg_putInFolder($qr_folder);
-        echo "<br>";
-        echo "test2: " .  $data = file_get_contents_curl($urlData);
+        $ImageLocation = $_SESSION["ImageLocation"] = create_randomImg_putInFolder($qr_folder);
+        echo "Curl out: " . $data = file_get_contents_curl($urlData);
         file_put_contents($ImageLocation, $data);
         $_SESSION["QRData"] = $data;
 

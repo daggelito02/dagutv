@@ -1,14 +1,7 @@
 <?php
-    // Create a random imagename and return png file with a folder path
-    function create_randomImg_putInFolder($folder) {
-        $randonDataFromDate = date("Y-m-d H:i:s");
-        $pattern = array("-", " ", ":");
-        $imgName = str_replace($pattern, "", $randonDataFromDate);
-
-        return $ImageLocation = $folder . "/" . $imgName . ".png";
-    }
-    
-    function file_get_contents_curl($urlData) {
+$urlData = "http://dagutv.daggelito.se/9/imageView.php?image_id=123";
+echo "Curl out: " . $data = file_get_contents_curl($urlData);
+function file_get_contents_curl($urlData) {
         $ch = curl_init();
       
         curl_setopt($ch, CURLOPT_HEADER, 0);
@@ -31,4 +24,5 @@
       
         return $data;
     }
+    
 ?>

@@ -1,4 +1,9 @@
 <?php
+//loggningsfunktion så att följande information sparas för alla som besöker sidan:
+//Tid
+//REMOTE_ADDR
+//HTTP_USER_AGENT
+
 header('Content-type: text/plain');
 include '../settings/db_connection.php';
 
@@ -30,12 +35,6 @@ if ($conn->query($sql) === TRUE) {
 } else {
   die("Connection failed: " . $conn->connect_error);
 }
-
-//echo "Connected Successfully";
-// if ($conn->connect_error) {
-//   die("Connection failed: " . $conn->connect_error);
-// }
-// echo "Connected successfully";
 
 CloseCon($conn);
 

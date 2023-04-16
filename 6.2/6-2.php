@@ -1,15 +1,20 @@
 <?php
-// lägg kanske till en sort()
+// Hämtar blogg värden som läggs in till DB samt läses ut
+// Finns även en enkel sortering via sql frågor 
 header('Content-type: text/html');
 include '../settings/db_connection.php';
 $conn = OpenCon();
 $addToDB = false;
+$sortOrder = "ASC";
+$sortValue = "ID";
 $time = date("Y-m-d H:i:s");
 if ($_POST and $_POST['push_button']){
   $name = strip_tags($_POST['name']);
   $email = strip_tags($_POST['email']);
   $homepage = strip_tags($_POST['homepage']);
   $comment = strip_tags($_POST['comment']);
+  $sortOrder = strip_tags($_POST['sort_optopn']);
+  $sortValue = strip_tags($_POST['sort_name']);
   $addToDB = true;
 }
 if ($addToDB) {
@@ -32,7 +37,7 @@ if ($addToDB) {
     $stmt->close();
   }
 }
-$sql = "SELECT ID, time, name, email, homepage, comment FROM dagges_blogg";
+$sql = "SELECT ID, time, name, email, homepage, comment FROM dagges_blogg ORDER BY $sortValue $sortOrder";
 $stmt = $conn->prepare($sql);
 $stmt->execute() or die("<b>Error:</b> Problem on Retrieving blogg data<br/>" . mysqli_connect_error());
 $result = $stmt->get_result();
@@ -56,7 +61,6 @@ foreach ($bloggDataRow as $printBloggData) {
 }
 echo $html_pieces[2];
  
-
 CloseCon($conn);
 
 ?>

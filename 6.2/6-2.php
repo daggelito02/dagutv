@@ -8,7 +8,7 @@ $addToDB = false;
 $sortOrder = "ASC";
 $sortValue = "ID";
 $time = date("Y-m-d H:i:s");
-if ($_POST and $_POST['push_button']){
+if ($_POST and $_POST['push_button'] and !$_POST['sort_only']){
   $name = strip_tags($_POST['name']);
   $email = strip_tags($_POST['email']);
   $homepage = strip_tags($_POST['homepage']);
@@ -16,7 +16,11 @@ if ($_POST and $_POST['push_button']){
   $sortOrder = strip_tags($_POST['sort_optopn']);
   $sortValue = strip_tags($_POST['sort_name']);
   $addToDB = true;
+} elseif ($_POST and $_POST['sort_only']) {
+  $sortOrder = strip_tags($_POST['sort_optopn']);
+  $sortValue = strip_tags($_POST['sort_name']);
 }
+
 if ($addToDB) {
   if ($stmt = $conn->prepare("INSERT INTO dagges_blogg (time, name, email, homepage, comment) VALUES (?, ?, ?, ?, ?)")) {
     // Bind the variables to the parameter as strings.

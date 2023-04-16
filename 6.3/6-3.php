@@ -1,15 +1,21 @@
 <?php
+// Hämtar blogg värden som läggs in till DB samt läses ut
+// Finns även en enkel sortering via sql frågor 
 ini_set('display_errors', 0);
 header('Content-type: text/html');
 include '../settings/db_connection.php';
 $conn = OpenCon();
+$sortOrder = "ASC";
+$sortValue = "ID";
 $addToDB = false;
 $time = date("Y-m-d H:i:s");
-if ($_POST and $_POST['push_button']){
+if ($_POST and $_POST['push_button'] and !$_POST['sort_only']){
   $name = strip_tags($_POST['name']);
   $email = strip_tags($_POST['email']);
   $homepage = strip_tags($_POST['homepage']);
   $comment = strip_tags($_POST['comment']);
+  $sortOrder = strip_tags($_POST['sort_optopn']);
+  $sortValue = strip_tags($_POST['sort_name']);
   $imgType = ""; 
   $imgData = "";
   if (count($_FILES) > 0) {
@@ -17,13 +23,14 @@ if ($_POST and $_POST['push_button']){
         $imgData = file_get_contents($_FILES['file']['tmp_name']);
         $imgType = $_FILES['file']['type'];
     }
-    
   }
   $addToDB = true;
+} elseif ($_POST and $_POST['sort_only']) {
+  $sortOrder = strip_tags($_POST['sort_optopn']);
+  $sortValue = strip_tags($_POST['sort_name']);
 }
-
+// Lägger in i DB
 if ($addToDB) {
-
   $conn -> autocommit(FALSE);
   try {
     /* Insert some values */
@@ -45,8 +52,9 @@ if ($addToDB) {
     $conn->rollback();
   }
 }
-
-$sql = 'SELECT * FROM dagges_blogg_tbl1 INNER JOIN dagges_blogg_tbl2 ON dagges_blogg_tbl1.ID = dagges_blogg_tbl2.img_id';
+//Läser ut från två DB-tabbeller
+$sql = "SELECT * FROM dagges_blogg_tbl1 INNER JOIN dagges_blogg_tbl2 
+ON dagges_blogg_tbl1.ID = dagges_blogg_tbl2.img_id ORDER BY $sortValue $sortOrder";
 $stmt = $conn->prepare($sql);
 $stmt->execute() or die("<b>Error:</b> Problem on Retrieving blogg data<br/>" . mysqli_connect_error());
 $result = $stmt->get_result();

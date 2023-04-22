@@ -5,7 +5,7 @@
 //HTTP_USER_AGENT
 
 header('Content-type: text/plain');
-include '../settings/db_connection.php';
+include 'includes/db_connection.php';
 
 $conn = OpenCon();
 

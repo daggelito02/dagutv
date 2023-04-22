@@ -3,7 +3,7 @@
 // Finns även en enkel sortering via sql frågor 
 ini_set('display_errors', 0);
 header('Content-type: text/html');
-include '../settings/db_connection.php';
+include 'includes/db_connection.php';
 $conn = OpenCon();
 $sortOrder = "ASC";
 $sortValue = "ID";

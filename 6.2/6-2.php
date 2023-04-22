@@ -2,7 +2,7 @@
 // Hämtar blogg värden som läggs in till DB samt läses ut
 // Finns även en enkel sortering via sql frågor 
 header('Content-type: text/html');
-include '../settings/db_connection.php';
+include 'includes/db_connection.php';
 $conn = OpenCon();
 $addToDB = false;
 $sortOrder = "ASC";

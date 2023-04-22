@@ -1,5 +1,5 @@
 <?php
-include '../settings/db_connection.php';
+include 'includes/db_connection.php';
 $conn = OpenCon();
 
 if (isset($_GET['image_id'])) {

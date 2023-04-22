@@ -84,7 +84,7 @@
     </a>
   </li>
   <li>
-    <span class="material-symbols-outlined">check_box</span>
+    <span class="material-symbols-outlined green">check_box</span>
     <a href="tasks9.html">
       Uppgift 9: Gesällprov
     </a>

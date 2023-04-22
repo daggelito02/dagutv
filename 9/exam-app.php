@@ -6,7 +6,7 @@
     header('Content-type: text/html; charset=utf-8');
     session_start();
     include "includes/settings/settings.php";
-    require_once('../settings/db_connection.php');
+    require_once('includes/db_connection.php');
     $QRtext = $defaul_qr_txt;
     $ImageLocation = $defaul_qr_image;
     $html = file_get_contents("exam-app.html");

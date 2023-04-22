@@ -1,0 +1,6 @@
+#error {
+    display: none;
+}
+#error.show-content {
+    display: block;
+}

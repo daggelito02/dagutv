@@ -29,6 +29,7 @@ if ($_POST and $_POST['push_button'] and !$_POST['sort_only']){
   $sortOrder = strip_tags($_POST['sort_optopn']);
   $sortValue = strip_tags($_POST['sort_name']);
 }
+$html = file_get_contents("6-3.html");
 // Lägger in i DB
 if ($addToDB) {
   $conn -> autocommit(FALSE);
@@ -44,11 +45,11 @@ if ($addToDB) {
     /* If code reaches this point without errors then commit the data in the database */
     $conn->commit();
   } catch(Exception $e) {
-    echo 'COULD NOT EXECUTE STATEMENT: ' .$e->getMessage() . "<br>";
-    echo "<h1>Software error:</h1>";
-    echo 'Line: ' .$e->getLine() .' in '.$e->getFile() . "<br>";
-    echo "For help, please send mail to the webmaster (Dag Fredriksson), 
-    giving this error message and the time and date of the error. <br><br>";
+    $html = str_replace('---error_show---', 'show-content', $html);
+    $html = str_replace('---error_msg---', $e->getMessage(), $html);
+    $html = str_replace('---error_line---', $e->getLine(), $html);
+    $html = str_replace('---error_file---', $e->getFile(), $html);
+    $html = str_replace('--mail_address--', 'daggelito02@gmail.com', $html);
     $conn->rollback();
   }
 }
@@ -60,7 +61,6 @@ $stmt->execute() or die("<b>Error:</b> Problem on Retrieving blogg data<br/>" . 
 $result = $stmt->get_result();
 $bloggDataRow = mysqli_fetch_all($result, MYSQLI_ASSOC);
 mysqli_free_result($result);
-$html = file_get_contents("6-3.html");
 $html_pieces = explode("<!--===entries===-->", $html);
 echo $html_pieces[0];
 

@@ -4,8 +4,16 @@
   <head>
     <meta charset="utf-8">
     <title>Dag Fredriksson blogg</title>
+    <link href="css/style.css" rel="stylesheet" type="text/css" media="all">
   </head>
   <body>
+    <div id="error" class="---error_show---">
+      <p>COULD NOT EXECUTE STATEMENT: ---error_msg---</p>
+      <h5>Software error:</h5>
+      Line: ---error_line--- in ---error_file---
+      <p>For help, please send mail to the webmaster (Dag Fredriksson) --mail_address--, 
+      giving this error message and the time and date of the error.</p>
+    </div>
     <form method="post" enctype="multipart/form-data" action="6-3.php">
       <p>
         <input type="text" name="name" placeholder="Namn"/>

@@ -2,9 +2,19 @@
 ini_set('display_errors', 1);
 header('Content-type: text/html; charset=utf-8');
 
-$hostname = '{imap.gmail.com:993/imap/ssl}INBOX';
-$username = 'dagutveckling@gmail.com';
-$password = 'iyhhwbhyzhluvghh';
+if ($_POST and $_POST['push_button']){
+    $username = strip_tags($_POST['username']);
+    $password = strip_tags($_POST['password']);
+    $mailserverHost = strip_tags($_POST['mailserver_host']);
+    $mailserverPort = strip_tags($_POST['mailserver_port']);
+  } else {
+    echo "Something went wrong, try again";
+  }
+
+$hostname = '{' . $mailserverHost .  ':' . $mailserverPort . '/imap/ssl}INBOX';
+//$hostname = '{imap.gmail.com:993/imap/ssl}INBOX';
+//$username = 'dagutveckling@gmail.com';
+//$password = 'iyhhwbhyzhluvghh';
 
 /* try to connect */
 //$mbox = imap_open("{imap.gmail.com:993/imap/ssl}INBOX", $_POST['username'], $_POST['password']);
@@ -12,18 +22,18 @@ $mbox = imap_open($hostname,$username,$password) or die('Cannot connect to Gmail
 
 //$mbox = imap_open("{imap.gmail.com:993/imap/ssl}}", "dagutveckling@gmail.com", "iyhhwbhyzhluvghh");
 
-echo "<h1>Mailboxes</h1>\n";
-$folders = imap_listmailbox($mbox, "{imap.gmail.com:993}", "*");
+// echo "<h1>Mailboxes</h1>\n";
+// $folders = imap_listmailbox($mbox, "{imap.gmail.com:993}", "*");
 
-if ($folders == false) {
-    echo "Call failed<br />\n";
-} else {
-    foreach ($folders as $val) {
-        echo $val . "<br />\n";
-    }
-}
-echo "<br />\n";
-echo "<br />\n";
+// if ($folders == false) {
+//     echo "Call failed<br />\n";
+// } else {
+//     foreach ($folders as $val) {
+//         echo $val . "<br />\n";
+//     }
+// }
+// echo "<br />\n";
+// echo "<br />\n";
 // $MC = imap_check($mbox);
 
 // // Fetch an overview for all messages in INBOX
@@ -132,4 +142,8 @@ if($emails)
 // }
 
 imap_close($mbox);
+
+//$html = file_get_contents("5-3.html");
+//echo $html
+
 ?>

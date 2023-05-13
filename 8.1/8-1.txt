@@ -1,0 +1,19 @@
+8.1 HTTP-baserad autentisering med okrypterad information
+
+Jag behövde skapa två filer med instruktioner för webservern apache2
+Först skapade jag .htaccess filen som ligger i den map som ska autentiseras.
+Dessa instruktioner finns i .htaccess-filen:
+
+AuthName "Restricted Area"
+AuthType Basic 
+AuthUserFile /var/.htpasswd 
+require valid-user
+
+Sedan skapade jag filen .htpasswd vars sökvägs-instruktion beskrivs med variabeln AuthUserFile i .htaccess filen
+och gav användarnamnet sol med kommandot htpasswd -c /var/.htpasswd sol.
+Därefter gav jag den ett lösenordet 
+New password: pirre
+Re-type new password: pirre
+
+Mvh
+Dag Fredriksson :-)

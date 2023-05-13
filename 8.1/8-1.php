@@ -13,5 +13,6 @@
     // välkomstmedelandet med användarnamnet igen.
     // Användarnam är: sol
     // Lösen ordet är: pirre
+    
     //authenticate();
 ?>

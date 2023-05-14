@@ -1,4 +1,5 @@
 <?php
+    // Sends the selected data via email
     if (!empty($_POST['send_email']) == "true"){
         $to = "";
         include "PHPMailer/mailQR.php";

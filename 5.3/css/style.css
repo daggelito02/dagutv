@@ -16,3 +16,7 @@ html body#mail-contents p {
 html body#mail-contents table {
     width: unset;
 }
+html body#mail-contents .mail-content{
+    padding: 1rem 0;
+    border-top: #ccc 1px solid;
+}

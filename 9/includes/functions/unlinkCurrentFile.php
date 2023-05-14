@@ -1,4 +1,5 @@
 <?php
+    //Deletes previous file and after a new current had been created
     function unlinkCurrentFilesInFolder($folder) {
         $files = glob($folder . "/*.*");
         $currentImage = substr(end($files), 8);

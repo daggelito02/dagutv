@@ -1,5 +1,5 @@
 <?php
-
+//Connect to DB
 function OpenCon()
  {
     $dbhost = "localhost";

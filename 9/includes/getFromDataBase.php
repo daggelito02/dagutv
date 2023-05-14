@@ -1,4 +1,6 @@
 <?php
+  //Selects data from DB 
+
   $conn = OpenCon();
 
   $sql = "SELECT IID, qr_text FROM dagges_exam_app";

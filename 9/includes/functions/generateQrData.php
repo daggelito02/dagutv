@@ -19,8 +19,7 @@
         curl_setopt($ch, CURLOPT_FAILONERROR, true); // Required for HTTP error 
         curl_error($ch);
         if (isset($error_msg)) {
-            // TODO - Handle cURL error accordingly
-            echo "error_msg: " .$error_msg;
+            echo "Error message: " .$error_msg;
         }
 
         curl_setopt($ch, CURLOPT_URL, $urlData);

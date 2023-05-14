@@ -1,4 +1,5 @@
   <?php
+    //Inserts data to the DB
     
     $conn = OpenCon();
     if ($addToDB) {

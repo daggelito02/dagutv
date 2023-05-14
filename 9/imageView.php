@@ -1,4 +1,5 @@
 <?php
+// Selects and visualizes images from DB 
 include 'includes/db_connection.php';
 $conn = OpenCon();
 

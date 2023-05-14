@@ -1,4 +1,5 @@
   <?php
+  //Delete data from DB
   $deleteFromDB = false;
   $IID = 0;
   if (!empty($_POST['qr-image']) and $_POST['qr-image'] !="select" and $_POST['requestDB_button'] == "delete_qr_image") {

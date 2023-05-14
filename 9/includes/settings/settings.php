@@ -14,9 +14,9 @@
     $user_name = "daggelito02@gmail.com";
     $webmaster = "daggelito02@gmail.com";
     $protocol = "https://";
-    $baseurl = getBaseUrl($protocol);
-    $baseurl = "http://192.168.1.2/dagutv/";
-    $appfolder = "9/"; //Specify folder for app, leve empty if app in root folder
+    //$baseurl = getBaseUrl($protocol); //Gets the environments domain
+    $baseurl = "http://192.168.1.2"; //Only localy
+    $appfolder = "/dagutv/9/"; //Specify folder for app, leve empty if app in root folder
     $folderBaseUrl = $baseurl . $appfolder;
 
 ?>

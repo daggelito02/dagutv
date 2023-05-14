@@ -15,6 +15,7 @@
     $webmaster = "daggelito02@gmail.com";
     $protocol = "https://";
     $baseurl = getBaseUrl($protocol);
+    $baseurl = "http://192.168.1.2/dagutv/";
     $appfolder = "9/"; //Specify folder for app, leve empty if app in root folder
     $folderBaseUrl = $baseurl . $appfolder;
 

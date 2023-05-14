@@ -25,7 +25,7 @@
 
         curl_setopt($ch, CURLOPT_URL, $urlData);
         
-        echo $data = curl_exec($ch);
+        $data = curl_exec($ch);
 
         curl_close($ch);
       

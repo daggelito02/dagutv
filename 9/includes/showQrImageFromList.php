@@ -6,7 +6,7 @@
         $optionValues = $option_values[0];
         $QRtext = $_SESSION["QRtext"] = strip_tags($option_values[1]);
         $ImageLocation = $_SESSION["ImageLocation"] = $image_view . $option_values[0];
-        echo $urlData = $folderBaseUrl . $ImageLocation;
+        $urlData = $folderBaseUrl . $ImageLocation;
         include "functions/generateQrData.php";
         $ImageLocation = $_SESSION["ImageLocation"] = create_randomImg_putInFolder($qr_folder);
         $data = file_get_contents_curl($urlData);

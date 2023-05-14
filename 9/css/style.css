@@ -36,6 +36,9 @@ header, main, aside {
 header {
   grid-area: header;
 }
+.heading-title {
+  text-decoration: none;
+}
 main {
   grid-area: main;
 }

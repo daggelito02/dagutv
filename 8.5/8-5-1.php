@@ -1,4 +1,5 @@
 <?php
+    //Hämtar och skriver ut resultatet från formulätet
     header('Content-type: text/plain');
 
     $cookie_name = "sessions-id";

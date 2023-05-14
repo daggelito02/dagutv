@@ -6,17 +6,17 @@
         <title>QR da-Code</title>
         <meta name="viewport" content="width=device-width,initial-scale=1">
         <link rel="shortcut icon" href="favicon.ico" type="image/x-icon"> 
-        <script type="text/javascript" src="js/exam-app.js"></script>
+        <script src="js/exam-app.js"></script>
         <link href="css/style.css" rel="stylesheet" type="text/css" media="all">
         <link href="css/media.css" rel="stylesheet" type="text/css" media="all">
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" >
         <link href="css/print.css" rel="stylesheet" type="text/css" media="print">
     </head>
     <body>
         <div id="grid-container">
             <input id="show-email" type="checkbox" name="show-email">
             <header>
-                <div id="error" ---error_show--- >
+                <div id="error" class="---error_show---">
                     <p>COULD NOT EXECUTE STATEMENT: ---error_msg---</p>
                     <div class="heading">Software error:</div>
                     Line: ---error_line--- in ---error_file---
@@ -24,25 +24,25 @@
                     giving this error message and the time and date of the error.</p>
                     <a href="---start_page_url---">Back to start page</a>
                 </div>
-                <div id="generate-QR" class="content header-content" ---hide_content--->
+                <div id="generate-QR" class="content header-content ---hide_content---">
                     <a class="heading-title" href="exam-app.php"><h1 class="app-header">QR da-Code</h1></a>
                     <div class="header-forms-container">
-                        <div id="qrimage-list-message" ---show_added-text--->
+                        <div id="qrimage-list-message" ---show_added-text--- >
                             <p id="success-text">
                                 The QR image with message "---QR_txt_message---" was successfully saved to the list!
                             </p>
                         </div>
-                        <div id="qrimage-list-message" ---show_deleted-text--->
+                        <div id="qrimage-list-message" ---show_deleted-text--- >
                             <p id="success-text">
                                ---QR_txt_message---
                             </p>
                         </div>
-                        <div id="email-success-message" ---show_email_msg--->
+                        <div id="email-success-message" ---show_email_msg--- >
                             <p id="success-text">
                                 Your email has been successfully sent to: --Recipient--
                             </p>
                         </div>
-                        <div id="email-fail-message" ---show_email_fail_msg--->
+                        <div id="email-fail-message" ---show_email_fail_msg--- >
                             <p id="fail-text">
                                 ---show_error_mail_msg---
                             </p>
@@ -51,10 +51,10 @@
                             <form method="post" enctype="multipart/form-data" action="exam-app.php">
                                 <label for="qrcode">Generate your own QR-image:</label>
                                 <div class="generate-qr-inputs">
-                                    <input autocomplete="off" type="text" id="qrcode" name="qrcode" placeholder="Type your QR text here"/>
+                                    <input autocomplete="off" type="text" id="qrcode" name="qrcode" placeholder="Type your QR text here">
                                 </div>
                                 <div class="generate-qr-inputs">
-                                    <input class="button" type="submit" name="generate_QR_button" value="Generate"/>
+                                    <input class="button" type="submit" name="generate_QR_button" value="Generate">
                                     <span id="add-to-DB" class="DB-link ---enable_DB-link---">
                                         <span class="material-symbols-outlined">library_add</span>
                                         <a id="tabindex-no" tabindex="-1" href="exam-app.php?addToDB=true">Save to list</a>
@@ -97,17 +97,17 @@
                     </div>
                 </div>
             </header>
-            <main class="content" ---hide_content--->
+            <main class="content ---hide_content---">
                 <div id="image-content">
                     <p class="qr-code-text">QR text: ---QR_txt---</p>
-                    <img class="qr-image" src="---image_src---" alt="QR bild!"/>
+                    <img class="qr-image" src="---image_src---" alt="QR bild!">
                     <p id="print-QR">
                         <span class="material-symbols-outlined">print</span>
                         <a href="#">Print your QR-image</a>
                     </p>
                 </div>
             </main>
-            <aside class="content" ---hide_content--->              
+            <aside class="content ---hide_content---" >              
                 <div id="email-qrimage">
                     <input id="emailForm-options" type="checkbox" name="emailForm-options">
                     <p class="emailForm__heading">

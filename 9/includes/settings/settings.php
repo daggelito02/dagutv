@@ -7,8 +7,8 @@
     $defaul_qr_txt = "Create your own QR-Image";
     $generateQRimage = true;
     $QRImageSize = "300x300";
-    $show_content = "style='display:block'";
-    $hide_content = "style='display:none'";
+    $show_content = "show-content";
+    $hide_content = "hide-content";
     $enable_db_link = "enable_db_link";
     $optionValues = "";
     $user_name = "daggelito02@gmail.com";

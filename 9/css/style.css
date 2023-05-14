@@ -323,3 +323,10 @@ p + form .emailForm__extra {
 .emailForm__heading span.more-down {
   display: none;
 }
+
+.show-content, #error.show-content {
+  display: block;
+}
+.hide-content {
+  display: none;
+}

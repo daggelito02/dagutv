@@ -1,5 +1,5 @@
 <?php
-// Hämtar blogg värden som läggs in till DB samt läses ut
+// Hämtar blogg-värden som läggs in till DB samt läses ut
 // Finns även en enkel sortering via sql frågor 
 ini_set('display_errors', 0);
 header('Content-type: text/html');

@@ -22,7 +22,7 @@
         unlinkCurrentFilesInFolder($qr_folder);
         $html = str_replace('---enable_DB-link---', $enable_db_link, $html);
     }
-    // // Add image to the Data base
+    // Add image to the Data base
     $addToDB = false;
    
     if (isset($_GET['addToDB'])){

@@ -6,15 +6,15 @@
 
     $conn -> autocommit(FALSE);
     try {
+      // Insert some values
       $stmt = $conn->prepare("INSERT INTO dagges_exam_app(qr_text, mime, img) VALUES(?, ?, ?)");
-      /* Insert some values */
       $QRtext = $_SESSION["QRtext"];
       $ImageLocation = $_SESSION["ImageLocation"];
       $imgType = "image/png";
       $imgData = $_SESSION["QRData"];
       $stmt->bind_param('sss', $QRtext, $imgType, $imgData);
       $stmt->execute();
-      /* If code reaches this point without errors then commit the data in the database */
+      // If code reaches this point without errors then commit the data in the database
       $conn->commit();
         } catch(Exception $e) {
             $html = str_replace('---error_show---', $show_content, $html);

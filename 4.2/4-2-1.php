@@ -1,4 +1,5 @@
 <?php
+    // Skriver ut data från get-metoden
     header('Content-type: text/plain');
 
     $cookie_name = "sessions-id";

@@ -1,7 +1,7 @@
 <?php
 header('Content-type: text/plain');
 
-if ($_GET){
+if ($_GET){ // Skriver ut data från get-metoden
     echo "hidden = " . $_GET['hidden']. "\n";
     echo "first_name = " . $_GET['first_name']. "\n";
     echo "last_name = " . $_GET['last_name']. "\n";
@@ -10,7 +10,7 @@ if ($_GET){
     echo "the_gift = " . $_GET['the_gift']. "\n";
     echo "other_wishes = " . $_GET['other_wishes']. "\n";
     echo "submit = " . $_GET['submit'];
-} elseif ($_POST){
+} elseif ($_POST){ // Skriver ut data från post-metoden
     echo "hidden = " . $_POST['hidden']. "\n";
     echo "first_name2 = " . $_POST['first_name']. "\n";
     echo "last_name2= " . $_POST['last_name']. "\n";

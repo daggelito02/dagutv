@@ -8,6 +8,7 @@
         return $ImageLocation = $folder . "/" . $imgName . ".png";
     }
     
+    // Handels url data
     function file_get_contents_curl($urlData) {
         $ch = curl_init();
       

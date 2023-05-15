@@ -1,4 +1,5 @@
 <?php
+    // Skriver ut data från get-metoden
     header('Content-type: text/plain');
     session_start();
 

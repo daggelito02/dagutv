@@ -1,7 +1,7 @@
 <?php
  ob_get_contents();
  ob_end_clean();
-
+// Läser begärd data och skriver ut rätt information beroende på minetyp.
 if (isset($_SERVER['CONTENT_LENGTH']) && (int) $_SERVER['CONTENT_LENGTH'] > 41943040){ //Max in my (php.ini post_max_size=40M)
     $theSize = SizeUnits($_SERVER['CONTENT_LENGTH']); 
     echo "Max size is 40 MB. This file is " . $theSize . " big. Try to make it smaller.";
@@ -9,10 +9,11 @@ if (isset($_SERVER['CONTENT_LENGTH']) && (int) $_SERVER['CONTENT_LENGTH'] > 4194
     header('Content-type: text/plain');
     echo "Error trying to upload file";
 } else {
-    echo $mimetype = $_FILES["file"]["type"];
+    $mimetype = $_FILES["file"]["type"];
     switch ($mimetype) {
         case "text/plain":
             header('Content-type: text/plain');
+            echo $mimetype . "\n";
             echo file_get_contents($_FILES['file']['tmp_name']);
             break;
         case "image/png":
@@ -25,12 +26,13 @@ if (isset($_SERVER['CONTENT_LENGTH']) && (int) $_SERVER['CONTENT_LENGTH'] > 4194
             break;
         default:
             header('Content-type: text/plain');
+            echo $mimetype . "\n";
             echo "Name: " . $_FILES['file']['name'] . "\n";
             echo "Type: " . $_FILES['file']['type'] . "\n";
             echo "Size: " . $theSize = SizeUnits($_FILES['file']['size']);
     }
 }
-
+// Räknar och sätter lämplig storlekstyp baserat på filens byte-storlek
 function SizeUnits($bytes)
 {
     $label = array( 'B', 'KB', 'MB', 'GB', 'TB', 'PB' );

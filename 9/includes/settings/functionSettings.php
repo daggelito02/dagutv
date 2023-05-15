@@ -1,5 +1,5 @@
 <?php
-    //handles base url
+    //handles and create a base url
     function getBaseUrl($prottocol = "http://") {
         $serverName = $_SERVER['SERVER_NAME'];
         $requestURI = $_SERVER['REQUEST_URI'];

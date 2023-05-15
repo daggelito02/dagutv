@@ -79,10 +79,14 @@ textarea {
   font-family: Arial, Helvetica, sans-serif;
 }
 #error,
-#qrimage-list-message,
+.qrimage-list-message,
 #email-success-message,
 #email-fail-message {
     display: none;
+}
+#email-success-message.show-content,
+#email-fail-message.show-content {
+    display: block;
 }
 .heading {
     font-size: 30px;
@@ -111,14 +115,14 @@ label {
   display: flex;
   justify-content: space-between;
 }
-#qrimage-list-message,
+.qrimage-list-message,
 #email-success-message,
 #email-fail-message {
   flex: 1;
   min-width: 100%;
   margin-top: -0.5rem;
 }
-#success-text, #fail-text {
+.success-text, .fail-text {
   margin: 0 0 0.5rem;
   background: #efefef;
   padding: 0.5rem;

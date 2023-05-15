@@ -22,7 +22,7 @@
     } else {
       $trunkedQRTextList = $printQRimageData['qr_text'];
     }
-    $html_pieces1 = str_replace('---selected---', $selected, $html_pieces[1]);
+    $html_pieces1 = str_replace('data-select-QR-image="---selected---"', $selected, $html_pieces[1]);
     $html_pieces2 = str_replace('---QR_txt_list---', $printQRimageData['qr_text'], $html_pieces1);
     $html_pieces3 = str_replace('---QR_txt_list_truncated---', $trunkedQRTextList, $html_pieces2);
     echo str_replace('---image_id---', $printQRimageData['IID'], $html_pieces3);

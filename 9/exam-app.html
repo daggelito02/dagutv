@@ -27,23 +27,23 @@
                 <div id="generate-QR" class="content header-content ---hide_content---">
                     <a class="heading-title" href="exam-app.php"><h1 class="app-header">QR da-Code</h1></a>
                     <div class="header-forms-container">
-                        <div id="qrimage-list-message" ---show_added-text--- >
-                            <p id="success-text">
+                        <div class="qrimage-list-message ---show_added-text---" >
+                            <p class="success-text">
                                 The QR image with message "---QR_txt_message---" was successfully saved to the list!
                             </p>
                         </div>
-                        <div id="qrimage-list-message" ---show_deleted-text--- >
-                            <p id="success-text">
+                        <div class="qrimage-list-message ---show_deleted-text---" >
+                            <p class="success-text">
                                ---QR_txt_message---
                             </p>
                         </div>
-                        <div id="email-success-message" ---show_email_msg--- >
-                            <p id="success-text">
+                        <div id="email-success-message" class="---show_email_msg---" >
+                            <p class="success-text">
                                 Your email has been successfully sent to: --Recipient--
                             </p>
                         </div>
-                        <div id="email-fail-message" ---show_email_fail_msg--- >
-                            <p id="fail-text">
+                        <div id="email-fail-message" class="---show_email_fail_msg---" >
+                            <p class="fail-text">
                                 ---show_error_mail_msg---
                             </p>
                         </div>
@@ -76,9 +76,9 @@
                                     <label for="qr-image">Select a QR-image from list:</label>
                                     <div class="dropdown">
                                         <select name="qr-image" id="qr-image">
-                                            <option value="select">Select a QR image</option>
+                                            <option data-atvalue="select">Select a QR image</option>
                                             <!--===entries===-->
-                                            <option ---selected--- value="---image_id---!!!---QR_txt_list---">---QR_txt_list_truncated---</option>
+                                            <option data-select-QR-image="---selected---" value="---image_id---!!!---QR_txt_list---">---QR_txt_list_truncated---</option>
                                             <!--===entries===-->
                                         </select>
                                     </div>
@@ -112,9 +112,9 @@
                     <input id="emailForm-options" type="checkbox" name="emailForm-options">
                     <p class="emailForm__heading">
                         <span>Mail QR image:</span>
-                        <label class="emailForm-options" for="emailForm-options" role="button">
-                            <span class="material-symbols-outlined more-down">more_down</span>
-                            <span class="material-symbols-outlined more-up">more_up</span>
+                        <label class="emailForm-options" for="emailForm-options">
+                            <span class="material-symbols-outlined more-down" role="button">more_down</span>
+                            <span class="material-symbols-outlined more-up" role="button">more_up</span>
                         </label>
                     </p>
                     <form name="emailForm" method="post" enctype="multipart/form-data" action="exam-app.php">
@@ -134,13 +134,13 @@
                                 <input type="text" name="bcc" placeholder="Bcc">
                             </p>
                         </div>
-                        <p>
+                        <div>
                             <input type="hidden" name="subject" value="QR image with message ---QR_txt---">
                             <p>
                                 Subject: QR image with message:<br>
                                 <span class="qr-code-text">"---QR_txt---"</span>
                             </p>
-                        </p>
+                        </div>
                         <p>
                             <textarea name="message" rows="6" cols="25" placeholder="Message"></textarea>
                         </p>

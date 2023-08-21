@@ -63,12 +63,6 @@ input[type="text"] {
   height: 36px;
   padding: 16px;
 }
-input[type="checkbox"] {
-  color: #fff;
-  border: #fff;
-  background: #fff;
-  opacity: 0;
-}
 #show-qr-list, .show-qr-list {
   display: none;
 }
